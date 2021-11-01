@@ -1,9 +1,7 @@
-<h1> HOME PAGE </h1></br></br>
+<h1>Bienvenu sur la page d'acceuil :-]</h1></br></br>
 
-<h2> <%= link_to "Voir notre TEAM", team_path %></h2></br>
-<h2> <%= link_to "Contact", contact_path %> </h2></br>
 
-<h3> Tous les gossips :</h3></br>
+<h3> Voici la liste de tous les gossips connus de la base de données :</h3></br>
 <div>
   <% @gossips.each do |g| %>
     <h3><%= g.user.name %></h3>
