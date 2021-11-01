@@ -2,9 +2,11 @@
 
 
 <h3> Voici la liste de tous les gossips connus de la base de données :</h3></br>
-<div>
+<div class="gossips_array">
   <% @gossips.each do |g| %>
-    <h3><%= g.user.name %></h3>
-    <p><%= g.title %></p>
+    <div class="gossip">
+      <h3><%= g.user.name %></h3>
+      <p><%= g.title %></p>
+    </div>
   <% end %>
 </div>

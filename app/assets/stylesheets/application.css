@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+nav {
+  margin-bottom: 30px;
+}
+nav > h1 {
+  margin: 30px;
+}
+ .navbar-nav > * {
+  margin: 20px;
+ }
+
+ .gossips_array {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+ }
+
+ .gossip {
+   text-align: center;
+   width: 50%;
+   background-color: rgb(238, 149, 34);
+ }
