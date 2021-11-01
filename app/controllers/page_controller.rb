@@ -13,4 +13,10 @@ class PageController < ApplicationController
 
   end
 
+  def welcome
+    puts "$" * 60
+    puts params[:input]
+    puts "$" * 60
+  end
+
 end
