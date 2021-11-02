@@ -10,12 +10,23 @@ class GossipsController < ApplicationController
 
   def new
     # Méthode qui crée un potin vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
+    @gossip = Gossip.new
   end
 
   def create
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
     # pour info, le contenu de ce formulaire sera accessible dans le hash params (ton meilleur pote)
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
+    puts '$'*60
+    puts params
+
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user: User.first)
+    if @gossip.save 
+      puts "yyyyyyyyyyy" *10
+      redirect_to ('/')
+    else
+      puts "nnnnn"*20
+    end
   end
 
   def edit
