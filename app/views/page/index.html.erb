@@ -3,7 +3,7 @@
 
 <h3> Voici la liste de tous les gossips connus de la base de données :</h3></br>
 <div class="gossips_array">
-  <% @gossips.each do |g| %>
+  <% @gossips.reverse_each do |g| %>
     <div class="gossip">
       <h3><%= g.user.name %></h3>
       <p><%= g.title %></p>

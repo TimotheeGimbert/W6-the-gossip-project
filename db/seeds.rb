@@ -16,21 +16,26 @@ Gossip.destroy_all
 User.destroy_all
 City.destroy_all
 
+User.create(name: 'Anonymous', city: City.create(name: 'Web'))
 
 10.times do
-  City.create(name: Faker::Address.city)
+  city = City.create(name: Faker::Address.city)
+  puts city
 end
 
 10.times do
-  Tag.create(name: Faker::Lorem.word )
+  tag = Tag.create(name: Faker::Lorem.word)
+  puts tag
 end
 
 10.times do
-  User.create(name: Faker::Name.first_name, city: City.all.sample(1)[0])
+  user = User.create(name: Faker::Name.first_name, city: City.all.sample(1)[0])
+  puts user
 end
 
 20.times do
-  Gossip.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(sentence_count: 2), user: User.all.sample(1).first)
+  g = Gossip.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(sentence_count: 2), user: User.all[rand(1..User.all.length-1)])
+  puts g
 end
 
 Gossip.all.each do |current|
@@ -40,7 +45,8 @@ Gossip.all.each do |current|
 end
 
 20.times do
- PrivateMessage.create(content: Faker::Lorem.paragraph(sentence_count: 2), sender: User.all.sample(1).first)
+  pm = PrivateMessage.create(content: Faker::Lorem.paragraph(sentence_count: 2), sender: User.all[rand(1..User.all.length-1)])
+  puts pm
 end
 
 PrivateMessage.all.each do |current_pm|
@@ -50,15 +56,17 @@ PrivateMessage.all.each do |current_pm|
 end
 
 20.times do
-  comment = Comment.new(content: Faker::Lorem.paragraph(sentence_count: 2), user: User.all.sample(1).first)
+  comment = Comment.new(content: Faker::Lorem.paragraph(sentence_count: 2), user: User.all[rand(1..User.all.length-1)])
   comment.commentable = Gossip.all.sample(1).first
   comment.save
+  puts comment
 end
 
 20.times do
-  comment = Comment.new(content: Faker::Lorem.paragraph(sentence_count: 1), user: User.all.sample(1).first)
+  comment = Comment.new(content: Faker::Lorem.paragraph(sentence_count: 1), user: User.all[rand(1..User.all.length-1)])
   comment.commentable = Comment.all.sample(1).first
   comment.save
+  puts comment
 end
 
 20.times do
