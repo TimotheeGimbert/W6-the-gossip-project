@@ -29,12 +29,12 @@ end
 end
 
 10.times do
-  user = User.create(name: Faker::Name.first_name, city: City.all.sample(1)[0])
+  user = User.create(name: Faker::Name.first_name, city: City.all.sample(1)[0], description: Faker::Lorem.paragraph(sentence_count: 3))
   puts user
 end
 
 20.times do
-  g = Gossip.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(sentence_count: 2), user: User.all[rand(1..User.all.length-1)])
+  g = Gossip.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(sentence_count: 5), user: User.all[rand(1..User.all.length-1)])
   puts g
 end
 

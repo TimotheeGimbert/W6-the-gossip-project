@@ -1,13 +1,11 @@
-<h1>Bienvenu sur la page d'acceuil :-]</h1></br></br>
-
-
-<h3> Voici la liste de tous les gossips connus de la base de données :</h3></br>
-<div class="gossips_array">
+<div class="list-group w-50 mx-auto">
   <% @gossips.reverse_each do |g| %>
-    <div class="gossip">
-      <h3><%= g.user.name %></h3>
-      <p><%= g.title %></p>
-      <%= link_to "Voir", gossip_path(g.id) %>
-    </div>
+    <a href="<%=gossip_path(g.id)%>" class="list-group-item list-group-item-action bg-light">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><%= g.title %></h5>
+        <small><%= g.user.name %></small>
+      </div>
+      <small><%= g.content %></small>
+    </a>
   <% end %>
 </div>

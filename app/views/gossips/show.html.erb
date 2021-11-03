@@ -1,9 +1,11 @@
-<h1>Détails d'un Gossip</h1>
-
 <div class="gossip">
-  <h3> <%= @gossip.user.name %> </h3>
-  <p> <%= @gossip.title %> </p>
-  <%= link_to "Editer", edit_gossip_path(@gossip.id) %>
-  <a href="<%= gossip_path(@gossip.id) %>" class="btn" data-confirm="êtes-vous sur?" data-method="DELETE">Supprimer le gossip</a>
-  <%= link_to "Voir l'auteur", user_path(@gossip.user.id) %>
+  <h2> <%= @gossip.user.name %> </h2>
+  <h4> Titre : <%= @gossip.title %> </h4>
+  <p> <%= @gossip.content %> </p>
+  <div class="gossip__actions">
+    <%= link_to "Editer", edit_gossip_path(@gossip.id) %>
+    <a href="<%= gossip_path(@gossip.id) %>" class="btn" data-confirm="êtes-vous sur?" data-method="DELETE">Supprimer</a>
+    <%= link_to "Voir l'auteur", user_path(@gossip.user.id) %>
+    <%= link_to "Voir la ville concernée", city_path(@gossip.user.city.id) %>
+  </div>
 </div>
