@@ -3,4 +3,6 @@
 <div class="gossip">
   <h3><%= @gossip.user.name %></h3>
   <p><%= @gossip.title %></p>
+  <%= link_to "Editer", edit_gossip_path(@gossip.id) %>
+  <a href="<%= gossip_path(@gossip.id) %>" class="btn" data-confirm="êtes-vous sur?" data-method="DELETE">Supprimer le gossip</a>
 </div>
