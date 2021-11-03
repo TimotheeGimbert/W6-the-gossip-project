@@ -18,10 +18,9 @@ class GossipsController < ApplicationController
 
     @gossip = Gossip.new(title: params[:title], content: params[:content], user: User.first)
     if @gossip.save 
-      puts "yyyyyyyyyyy" *10
       redirect_to ('/')
     else
-      puts "nnnnn"*20
+      puts "GOSSIP CREATION ERROR" * 10
     end
   end
 
@@ -30,7 +29,10 @@ class GossipsController < ApplicationController
   end
 
   def update
-
+    @gossip = Gossip.find(params[:id])
+    post_params = params.require(:gossip).permit(:title, :content)
+    @gossip.update(post_params)
+    redirect_to root_path
   end
 
   def destroy
