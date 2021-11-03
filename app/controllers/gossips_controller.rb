@@ -18,7 +18,7 @@ class GossipsController < ApplicationController
 
     @gossip = Gossip.new(title: params[:title], content: params[:content], user: User.first)
     if @gossip.save 
-      redirect_to ('/')
+      redirect_to root_path
     else
       puts "GOSSIP CREATION ERROR" * 10
     end

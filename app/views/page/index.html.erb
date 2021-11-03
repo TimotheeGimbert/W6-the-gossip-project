@@ -7,6 +7,7 @@
     <div class="gossip">
       <h3><%= g.user.name %></h3>
       <p><%= g.title %></p>
+      <%= link_to "Voir", gossip_path(g.id) %>
     </div>
   <% end %>
 </div>
