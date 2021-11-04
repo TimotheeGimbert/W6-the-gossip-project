@@ -15,7 +15,7 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.new(title: params[:title], content: params[:content], user: User.first)
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user: current_user)
     if @gossip.save 
       redirect_to root_path
     else
