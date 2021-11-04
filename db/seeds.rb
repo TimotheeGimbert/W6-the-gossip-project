@@ -16,7 +16,8 @@ Gossip.destroy_all
 User.destroy_all
 City.destroy_all
 
-User.create(name: 'Anonymous', city: City.create(name: 'Web'))
+web = City.create(name: 'Web')
+User.create(name: 'Anonymous', city: web)
 
 10.times do
   city = City.create(name: Faker::Address.city)

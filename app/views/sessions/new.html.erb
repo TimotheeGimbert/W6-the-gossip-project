@@ -11,4 +11,7 @@
   <%= text_field_tag 'password', @password %>
 
   <%= submit_tag "Ouvrir la session" %>
+
+  <%= link_to "Je n'ai pas encore de compte", new_user_path, :class => "btn btn-outline-success mx-5" %>  
+
 <% end %>

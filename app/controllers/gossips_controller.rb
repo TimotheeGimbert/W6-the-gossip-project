@@ -13,14 +13,12 @@ class GossipsController < ApplicationController
   end
 
   def create
-    puts '$'*60
-    puts params
-
     @gossip = Gossip.new(title: params[:title], content: params[:content], user: User.first)
     if @gossip.save 
       redirect_to root_path
     else
-      puts "GOSSIP CREATION ERROR" * 10
+      flash.now[:danger] = 'Invalid gossip parameters !'
+      render 'new'
     end
   end
 

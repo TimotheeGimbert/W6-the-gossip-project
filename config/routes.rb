@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only:[:new, :create, :destroy]
   resources :cities, only:[:show]
-  resources :users, only:[:show]
+  resources :users, only:[:show, :new, :create]
   resources :gossips
 
   root 'page#index'

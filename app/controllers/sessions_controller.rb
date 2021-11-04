@@ -8,10 +8,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     puts '$' * 60
     if user && user.authenticate(params[:password])
-      puts 'SESSIONTRUE' * 10
       log_in(user)
     else
-      puts 'SESSIONFALSE' * 10
       flash.now[:danger] = 'Invalid user/pass combo !'
       render 'new'
     end
