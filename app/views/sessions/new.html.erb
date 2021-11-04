@@ -1,4 +1,6 @@
-<h1>Session Creator</h1>
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
 
 <%= form_tag url_for(action: 'create'), method: "post" do %>
 
@@ -6,7 +8,7 @@
   <%= text_field_tag 'email', @email %>
 
   <%= label_tag 'Mot de passe' %>
-  <%= text_area_tag 'password', @password %>
+  <%= text_field_tag 'password', @password %>
 
   <%= submit_tag "Ouvrir la session" %>
 <% end %>
