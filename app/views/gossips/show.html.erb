@@ -3,8 +3,8 @@
   <h4> <%= @gossip.title %> </h4>
   <p> <%= @gossip.content %> </p>
   <div class="gossip__actions">
-    <%= link_to "Voir l'auteur", user_path(@gossip.user.id), class: "btn btn-outline-light p-2 m-2" %>
-    <%= link_to "Voir la ville concernée", city_path(@gossip.user.city.id), class: "btn btn-outline-light p-2 m-2" %>
+    <%= link_to "Voir le profil de " + @gossip.user.name, user_path(@gossip.user.id), class: "btn btn-outline-light p-2 m-2" %>
+    <%= link_to "Voir la ville de " + @gossip.user.name, city_path(@gossip.user.city.id), class: "btn btn-outline-light p-2 m-2" %>
     <% if current_user == @gossip.user %>
       <%= link_to "Editer", edit_gossip_path(@gossip.id), class: "btn btn-outline-warning p-2 m-2" %>
       <%= link_to "Supprimer", gossip_path(@gossip.id), method: :delete, class: "btn btn-outline-danger p-2 m-2" %>
