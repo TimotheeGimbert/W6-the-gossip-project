@@ -16,10 +16,6 @@ Gossip.destroy_all
 User.destroy_all
 City.destroy_all
 
-web = City.create(name: 'Web')
-webmaster = User.create(name: 'WEBMASTER', city: web, email: 'webmaster@gmail.com', password: 'webmaster', description: "Ce profil de webmaster tient lieu d'utilisateur démo. Vous pouvez vous connecter avec son email et son mot de passe (webmaster@gmail.com | mot de passe : webmaster")
-
-
 10.times do
   city = City.create(name: Faker::Address.city)
   puts city
@@ -79,4 +75,10 @@ end
   Like.create(user: User.all.sample(1).first, likeable: Comment.all.sample(1).first)
 end
 
+web = City.create(name: 'Web')
+webmaster = User.create(name: 'WEBMASTER', city: web, email: 'webmaster@gmail.com', password: 'webmaster', description: "Ce profil de webmaster tient lieu d'utilisateur démo. Vous pouvez vous connecter avec son email et son mot de passe (webmaster@gmail.com | mot de passe : webmaster")
 gossip = Gossip.create(title: "Message du webmaster :-]", content: "Ce profil de webmaster tient lieu d'utilisateur démo. Vous pouvez vous connecter avec son email et son mot de passe (webmaster@gmail.com | mot de passe : webmaster", user: webmaster)
+comment = Comment.new(content: "Commentaire démo du webmaster sur son propre gossip dans le seed.rb", user: webmaster)
+comment.commentable = gossip
+comment.save
+Like.create(user: webmaster, likeable: gossip)
