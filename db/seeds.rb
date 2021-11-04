@@ -17,7 +17,8 @@ User.destroy_all
 City.destroy_all
 
 web = City.create(name: 'Web')
-User.create(name: 'Anonymous', city: web)
+webmaster = User.create(name: 'WEBMASTER', city: web, email: 'webmaster@gmail.com', password: 'webmaster', description: "Ce profil de webmaster tient lieu d'utilisateur démo. Vous pouvez vous connecter avec son email et son mot de passe (webmaster@gmail.com | mot de passe : webmaster")
+
 
 10.times do
   city = City.create(name: Faker::Address.city)
@@ -77,3 +78,5 @@ end
 20.times do
   Like.create(user: User.all.sample(1).first, likeable: Comment.all.sample(1).first)
 end
+
+gossip = Gossip.create(title: "Message du webmaster :-]", content: "Ce profil de webmaster tient lieu d'utilisateur démo. Vous pouvez vous connecter avec son email et son mot de passe (webmaster@gmail.com | mot de passe : webmaster", user: webmaster)

@@ -2,6 +2,6 @@
   <h2><%= @user.name %> </h2>
   <h3>Ville: <%= @user.city.name %> </h3>
   <h3>Description: <%= @user.description %> </h3>
-  <%= link_to "Voir la ville", city_path(@user.city.id) %>
+  <%= link_to "Voir la ville", city_path(@user.city.id), class: "btn btn-outline-light p-2 m-2" %>
 
 </div>
