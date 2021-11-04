@@ -1,0 +1,5 @@
+<h1>Sessions#create</h1>
+
+<h2>Bienvenue <%= current_user.email %> !</h2>
+
+<%= link_to "Se déconnecter", session_path(session.id), method: :delete %>

@@ -29,7 +29,7 @@ end
 end
 
 10.times do
-  user = User.create(name: Faker::Name.first_name, city: City.all.sample(1)[0], description: Faker::Lorem.paragraph(sentence_count: 3))
+  user = User.create(name: Faker::Name.first_name, city: City.all.sample(1)[0], description: Faker::Lorem.paragraph(sentence_count: 5), email: 'email@gmail.com', password: rand(111111..999999).to_s)
   puts user
 end
 
