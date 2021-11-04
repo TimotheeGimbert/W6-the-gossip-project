@@ -21,11 +21,14 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <%= link_to "Accueil", root_path %>
-            <%= link_to "Team", team_path %>
             <%= link_to "Gossip Creator", new_gossip_path %>
+            <%= link_to "Team", team_path %>
             <%= link_to "Contact", contact_path %>
           </div>
         </div>
+        <form class="form-inline">
+          <button class="btn btn-outline-warning mx-5" type="button">Connexion/Inscription</button>
+        </form>
       </nav>
     </header>
 
