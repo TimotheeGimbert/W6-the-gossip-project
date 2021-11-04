@@ -1,19 +1,17 @@
-<h1>Edition de Gossip</h1>
-
 <%= form_for @gossip do |f| %>
 
-  <div class='form-group'>
+  <div class='form-group text-center mb-5'>
     <label>Nouveau titre</label>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_field :title, class: 'form-control text-center' %>
   </div>
 
-  <div class='form-group'>
+  <div class='form-group text-center mb-5'>
     <label>Nouveau contenu</label>
-    <%= f.text_field :content, class: 'form-control' %>
+    <%= f.text_field :content, class: 'form-control text-center' %>
   </div>
 
-  <div class='form-group'>
-    <button type='submit'>Appliquer les modifications</button>
+  <div class='form-group text-center'>
+    <button type='submit' class="btn-info">Appliquer les modifications</button>
   </div>
 
 <% end %>
