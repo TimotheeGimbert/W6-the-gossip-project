@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    puts '$' * 60
     if user && user.authenticate(params[:password])
       log_in(user)
     else
