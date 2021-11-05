@@ -14,9 +14,13 @@
  *= require_self
  */
 
-  a:link {text-decoration: none !important;}
-  a:visited {text-decoration: none !important;}
-  a:active {text-decoration: none !important;}
+body {
+  background-color: rgba(217, 213, 221, 0.521);
+}
+
+a:link {text-decoration: none !important;}
+a:visited {text-decoration: none !important;}
+a:active {text-decoration: none !important;}
 
 nav {
   margin-bottom: 30px;
@@ -24,6 +28,6 @@ nav {
 nav > h1 {
   margin: 30px;
 }
- .navbar-nav > * {
+.navbar-nav > * {
   margin: 20px;
- }
+}

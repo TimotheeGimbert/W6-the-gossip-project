@@ -1,18 +1,19 @@
-<div class="gossip">
-  <h2> <%= @gossip.user.name %> </h2>
-  <h4> <%= @gossip.title %> </h4>
-  <p> <%= @gossip.content %> </p>
-  <p class="m-2 text-warning"> Likes : <%= @gossip.likes.length %></p>
-  <% if current_user %>
-    <%= link_to "Liker ce comm'", likes_path(user_id: current_user, gossip_id: @gossip.id), method: :post, class: "btn btn-outline-warning p-2 mb-2" %>
-  <%end%>
-  <div class="gossip__actions">
-    <%= link_to "Voir le profil de " + @gossip.user.name, user_path(@gossip.user.id), class: "btn btn-outline-light p-2 m-2" %>
-    <%= link_to "Voir la ville de " + @gossip.user.name, city_path(@gossip.user.city.id), class: "btn btn-outline-light p-2 m-2" %>
-    <% if current_user == @gossip.user %>
-      <%= link_to "Editer", edit_gossip_path(@gossip.id), class: "btn btn-outline-warning p-2 m-2" %>
-      <%= link_to "Supprimer", gossip_path(@gossip.id), method: :delete, class: "btn btn-outline-danger p-2 m-2" %>
-    <%end%>
+<div class="list-group w-75 mx-auto">
+<small><%= @gossip.user.name + ' | ' + @gossip.user.city.name %></small>
+  <div class="list-group-item list-group-item-action mt-2">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-4"><%= @gossip.title %></h5>
+    </div>
+    <small class="text-muted"><%= @gossip.content %></small>
+    <p class="mt-2 text-end text-success">Likes : <%= @gossip.likes.length %></p>
+    <div class="gossip__actions">
+      <%= link_to "Voir le profil de " + @gossip.user.name, user_path(@gossip.user.id), class: "btn btn-outline-primary p-2 m-2" %>
+      <% if current_user == @gossip.user %>
+        <%= link_to "Liker le PoTiN", likes_path(user_id: current_user, gossip_id: @gossip.id), method: :post, class: "btn btn-outline-success p-2 m-2" %>
+        <%= link_to "Editer", edit_gossip_path(@gossip.id), class: "btn btn-outline-secondary p-2 m-2" %>
+        <%= link_to "Supprimer", gossip_path(@gossip.id), method: :delete, class: "btn btn-outline-danger p-2 m-2" %>
+      <%end%>
+    </div>
   </div>
 </div>
 
@@ -20,6 +21,7 @@
   <h2> Commentaires </h2>
   <% @gossip.comments.each do|c| %>
     <p> <%= c.user.name + " | " + c.content %> </p>
-    <p class="text-info"> Likes : <%= c.likes.length %></p>
+    <p class="text-success"> Likes : <%= c.likes.length %></p>
   <%end%>
 </div>
+
