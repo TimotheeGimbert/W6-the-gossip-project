@@ -1,11 +1,11 @@
-<div class="list-group w-50 mx-auto">
+<div class="list-group w-75 mx-auto">
   <% @gossips.reverse_each do |g| %>
-    <a href="<%=gossip_path(g.id)%>" class="list-group-item list-group-item-action bg-warning mb-3">
-      <div class="d-flex w-100 m-2 justify-content-between">
-        <h5 class="mb-3"><%= g.title %></h5>
+    <a href="<%=gossip_path(g.id)%>" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-4"><%= g.title %></h5>
         <small><%= g.user.name + ' | ' + g.user.city.name %></small>
       </div>
-      <small><%= g.content %></small>
+      <small class="text-muted"><%= g.content %></small>
     </a>
   <% end %>
 </div>

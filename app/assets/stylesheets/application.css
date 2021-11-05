@@ -27,26 +27,3 @@ nav > h1 {
  .navbar-nav > * {
   margin: 20px;
  }
-
-.gossips_array {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-.gossip {
-  text-align: center;
-  width: 60%;
-  margin: auto;
-  padding: 40px;
-  background-color: rgba(86, 145, 59, 0.884);
-  color: rgb(245, 218, 181);
-  border-radius: 30px;
-}
-
-.gossip h2 { color: rgb(63, 60, 60)}
-.gossip__actions {
-  display: flex;
-  flex-direction: column;
-  margin: 40px 0;
-}
