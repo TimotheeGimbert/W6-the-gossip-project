@@ -20,17 +20,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <%= link_to "Accueil", root_path %>
-            <%= link_to "Gossip Creator", new_gossip_path %>
-            <%= link_to "Team", team_path %>
-            <%= link_to "Contact", contact_path %>
+            <%= link_to "Accueil", root_path, class: "text-muted" %>
+            <%= link_to "Gossip Creator", new_gossip_path, class: "text-light" %>
+            <%= link_to "Team", team_path, class: "text-muted" %>
+            <%= link_to "Contact", contact_path, class: "text-muted" %>
           </div>
         </div>
         <form class="form-inline">
           <% if current_user %>
             <%= link_to current_user.name + ' | Déconnexion', session_path(session.id), method: :delete, :class => "btn btn-outline-warning mx-5" %>
           <% else %>
-            <%= link_to "Connexion/Inscription", new_session_path, :class => "btn btn-outline-warning mx-5" %>  
+            <%= link_to "Connexion | Inscription", new_session_path, :class => "btn btn-outline-warning mx-5" %>  
           <% end %>
         </form>
       </nav>

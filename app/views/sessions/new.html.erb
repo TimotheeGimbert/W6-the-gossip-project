@@ -2,16 +2,18 @@
   <div class="flash <%= key %>"><%= value %></div>
 <% end %>
 
-<%= form_tag url_for(action: 'create'), method: "post" do %>
-
-  <%= label_tag 'Email' %>
-  <%= text_field_tag 'email', @email %>
-
-  <%= label_tag 'Mot de passe' %>
-  <%= text_field_tag 'password', @password %>
-
-  <%= submit_tag "Ouvrir la session" %>
-
-  <%= link_to "Je n'ai pas encore de compte", new_user_path, :class => "btn btn-outline-success mx-5" %>  
-
-<% end %>
+<div class="text-center mt-5">
+  <%= form_tag url_for(action: 'create'), method: "post" do %>
+  
+    <%= label_tag 'Email' %>
+    <%= text_field_tag 'email', @email, class: "m-3" %>
+    
+    <%= label_tag 'Mot de passe' %>
+    <%= text_field_tag 'password', @password, class: "m-3" %>
+  
+    <%= submit_tag "Ouvrir la session", class: "btn-success" %>
+  
+    <%= link_to "Je n'ai pas encore de compte !", new_user_path, class: "btn btn-outline-danger mx-5" %>  
+  
+  <% end %>
+</div>

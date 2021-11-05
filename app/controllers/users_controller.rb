@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def create
     city = City.first
     @user = User.new(name: params[:name], description: params[:description], city: city, email: params[:email], password: params[:password])
-    if @user.save 
+    if @user.save
+      log_in(@user) 
       redirect_to user_path(@user.id)
     else
       flash.now[:danger] = 'Invalid user parameters !'
