@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to root_path
     else
-      flash.now[:danger] = 'Invalid user/pass combo !'
+      flash.now[:danger] = '@mail/password invalide !'
       render 'new'
     end
   end

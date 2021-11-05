@@ -1,3 +1,13 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.auth {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(221, 166, 62, 0.87);
+  padding: 60px;
+  margin-top: 60px;
+}

@@ -1,19 +1,20 @@
-<% flash.each do |key, value| %>
-  <div class="flash <%= key %>"><%= value %></div>
-<% end %>
-
-<div class="text-center mt-5">
+<div class="auth text-center">
   <%= form_tag url_for(action: 'create'), method: "post" do %>
-  
+  <div>
     <%= label_tag 'Email' %>
     <%= text_field_tag 'email', @email, class: "m-3" %>
     
     <%= label_tag 'Mot de passe' %>
     <%= password_field_tag 'password', @password, class: "m-3" %>
   
-    <%= submit_tag "Ouvrir la session", class: "btn-success" %>
-  
-    <%= link_to "Je n'ai pas encore de compte !", new_user_path, class: "btn btn-outline-danger mx-5" %>  
-  
+    <%= submit_tag "Ouvrir la session", class: "btn-success p-3" %>
+  </div>
+  <div>
+    <%= link_to "Je n'ai pas encore de compte !", new_user_path, class: "btn btn-outline-dark mt-4" %>  
+  </div>
   <% end %>
 </div>
+
+<% flash.each do |key, value| %>
+  <div class="text-danger text-center mt-5 flash <%= key %>"><%= value %></div>
+<% end %>

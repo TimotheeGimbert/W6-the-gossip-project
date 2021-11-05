@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :new, :create]
   resources :gossips
 
-  root 'page#index'
-  get '/contact', to: 'page#contact'
   get '/team', to: 'page#team'
-  get '/welcome/:input', to: 'page#welcome'
+  get '/welcome/:input', to: 'page#welcome' 
+
+  root 'page#index'
   
 end
