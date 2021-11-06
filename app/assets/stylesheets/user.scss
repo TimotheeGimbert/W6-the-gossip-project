@@ -1,3 +1,27 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile {
+  text-align: start;
+  width: 60%;
+  margin: 80px auto;
+  padding: 120px;
+  background-color: rgba(16, 115, 196, 0.726);
+  color: rgb(77, 77, 74);
+  border-radius: 30px;
+
+  h2 { 
+    color: rgba(228, 238, 255, 0.842);
+  }
+
+  p {
+    color: rgba(22, 22, 18, 0.829);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+  }
+}

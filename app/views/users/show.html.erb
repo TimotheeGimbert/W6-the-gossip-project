@@ -1,7 +1,8 @@
-<div class="gossip">
+<div class="profile">
   <h2><%= @user.name %> </h2>
-  <h3>Ville: <%= @user.city.name %> </h3>
-  <p>Description: <%= @user.description %> </p>
-  <%= link_to "Voir la ville de " + @user.name, city_path(@user.city.id), class: "btn btn-outline-light p-2 m-2" %>
-
+  <h4>Ville: <%= @user.city.name %> </h4> <br/>
+  <p> <%= @user.description %> </p>
+  <div class="profile__actions">
+    <%= link_to "Voir la ville de " + @user.name, city_path(@user.city.id), class: "btn btn-outline-light p-2 mt-5" %>
+  </div>
 </div>
