@@ -16,7 +16,7 @@
       <nav class="navbar navbar-dark bg-dark p-4">
         <h2> <%= link_to "LE siTe du PoTiN", root_path, class:"text-light mx-4" %> </h2>
         <form class="form-inline">
-          <%= link_to "Infos & Contact", team_path, class: "text-muted mx-3" %>
+          <%= link_to "Infos & Contact", team_path, class: "text-muted mx-3 mx-lg-4" %>
           <% if current_user %>
             <%= link_to "RéDigEr Un PoTiN", new_gossip_path, class: "text-light mx-3" %>
             <%= link_to "MoN ProFiL", root_path, :class => "text-light btn btn-outline-primary mx-3" %>

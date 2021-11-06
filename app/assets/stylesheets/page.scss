@@ -2,3 +2,11 @@
   background-color: rgba(142, 221, 15, 0.315);
   padding: 60px 80px;
 }
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 90px 0;
+}
+

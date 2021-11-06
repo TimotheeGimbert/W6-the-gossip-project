@@ -1,6 +1,6 @@
-<div class="list-group w-75 mx-auto">
+<div class="list-group w-75 mx-auto mt-5">
 <small><%= @gossip.user.name + ' | ' + @gossip.user.city.name %></small>
-  <div class="list-group-item list-group-item-action mt-2">
+  <div class="list-group-item mt-2">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-4"><%= @gossip.title %></h5>
     </div>
@@ -17,11 +17,13 @@
   </div>
 </div>
 
-<div class="text-center m-5">
+<div class="comments list-group w-75 text-center mx-auto m-5">
   <h2> Commentaires </h2>
   <% @gossip.comments.each do|c| %>
+  <div class="list-group-item">
     <p> <%= c.user.name + " | " + c.content %> </p>
     <p class="text-success"> Likes : <%= c.likes.length %></p>
+    </div>
   <%end%>
 </div>
 
