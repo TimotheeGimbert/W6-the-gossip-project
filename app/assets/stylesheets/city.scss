@@ -1,3 +1,27 @@
 // Place all the styles related to the city controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.city {
+  text-align: center;
+  width: 60%;
+  margin: 120px auto;
+  padding: 40px;
+  background-color: rgba(165, 158, 146, 0.733);
+  color: rgba(70, 66, 63, 0.863);
+  border-radius: 30px;
+
+  h3 { 
+    color: rgb(65, 62, 60);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+  }
+}
+
+section {
+  text-align: center;
+}
