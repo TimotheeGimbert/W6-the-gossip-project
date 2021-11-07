@@ -11,4 +11,9 @@ class User < ApplicationRecord
   has_many :received_messages, foreign_key: 'recipient_id', class_name: "private_message_recipient_join"
   has_many :likes
   
+  def remember(remember_token)
+    remember_digest = BCrypt::Password.create(remember_token)
+    self.update(remember_digest: remember_digest)
+  end
+
 end

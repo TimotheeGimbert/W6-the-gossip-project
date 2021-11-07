@@ -76,9 +76,9 @@ end
 end
 
 web = City.create(name: 'Web')
-webmaster = User.create(name: 'Webmaster', city: web, email: 'webmaster@gmail.com', password: 'webmaster', description: "Ce profil de webmaster est un profil démo. Tu peux te connecter avec son email et son mot de passe : webmaster@gmail.com | mot de passe : webmaster")
-gossip = Gossip.create(title: "Message de bienvenue :-]", content: "Bonjour visiteur ! Tu es sur une application web développée sous Ruby On Rails. Tu peux créer un profil avec un email bidon pour tester le site et publier tes potins amicaux. Tu peux également te connecter avec le profil du Webmaster. Son mot de passe apparait sur son profil ;)", user: webmaster)
-comment = Comment.new(content: "Commentaire démo du webmaster sur son propre gossip dans le seed.rb", user: webmaster)
+webmaster = User.create(name: 'Webmaster', city: web, email: 'webmaster@gmail.com', password: 'webmaster', description: "Ce profil webmaster ne possède pas de statut particulier, il n'est présent que pour vous acceuillir comme il se doit :-)")
+gossip = Gossip.create(title: "Message de bienvenue :-]", content: "Bonjour visiteur ! Ce site héberge une application web développée sous Ruby On Rails. Vous pouvez créer un profil avec un email bidon pour tester le site et publier tes potins amicaux.", user: webmaster)
+comment = Comment.new(content: "Et pour info, on travaille actuellement à l'implémentation des commentaires pour les utilisateurs connectés !", user: webmaster)
 comment.commentable = gossip
 comment.save
 11.times do Like.create(user: webmaster, likeable: gossip) end

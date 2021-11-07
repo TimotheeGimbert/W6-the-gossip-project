@@ -35,3 +35,14 @@ section {
     background-color: rgba(127, 146, 97, 0.226);
   }
 }
+
+.gossip-creation {
+  &__title {
+    margin: 20px 0;
+  }
+  &__content {
+    > * {
+      width: 200px;
+    }
+  }
+}

@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       log_in(user)
+      remember(user)
       redirect_to root_path
     else
       flash.now[:danger] = '@mail/password invalide !'
@@ -16,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:user_id)
+    log_out(current_user)
   end
 
 end
