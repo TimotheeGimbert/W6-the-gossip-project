@@ -82,3 +82,7 @@ comment = Comment.new(content: "Et pour info, on travaille actuellement à l'imp
 comment.commentable = gossip
 comment.save
 11.times do Like.create(user: webmaster, likeable: gossip) end
+
+bdx = City.create(name: 'Bordeaux')
+tim = User.create(name: 'Timothée', city: bdx, email: 'tim@gmail.com', password: 'timtim', description: ":-)")
+gossip = Gossip.create(title: "Message pour chouchou", content: "Tu me manques énormément ...", user: tim)
